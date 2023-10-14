@@ -15,5 +15,6 @@
         <file>Entities/Family.qml</file>
         <file>Entities/Incomes.qml</file>
         <file>Entities/Outcomes.qml</file>
+        <file>Delegates/FamilyModelDelegate.qml</file>
     </qresource>
 </RCC>
