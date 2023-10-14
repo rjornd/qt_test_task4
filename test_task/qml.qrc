@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Palette.qml</file>
+        <file>Entities/TopBar.qml</file>
+        <file alias="icons/backBlack">icons/backBlack.png</file>
+        <file alias="icons/homeBlack">icons/homeBlack.png</file>
+        <file alias="icons/menuBlack">icons/menuBlack.png</file>
+        <file alias="icons/settingsBlack">icons/settingsblack.png</file>
+        <file>DefaultElements/AbstractImage.qml</file>
+        <file>Entities/SettingPopup.qml</file>
+        <file>DefaultElements/AbstractText.qml</file>
+        <file>Entities/LeftSideBarPopup.qml</file>
+        <file>Entities/Home.qml</file>
+        <file>Entities/Family.qml</file>
+        <file>Entities/Incomes.qml</file>
+        <file>Entities/Outcomes.qml</file>
+    </qresource>
+</RCC>
