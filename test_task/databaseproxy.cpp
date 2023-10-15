@@ -4,10 +4,27 @@ DatabaseProxy::DatabaseProxy(QObject *parent, QQmlContext *pContext)
 {
     Q_ASSERT(pContext != nullptr);
     connectToDataBase();
-    SqlQueryModelGenerator* familyModel = new SqlQueryModelGenerator(nullptr);
+    familyModel = new SqlQueryModelGenerator(this);
     familyModel->setQuery("SELECT * FROM " TABLE);
+
     pContext->setContextProperty("familyModel", familyModel);
 }
+
+void DatabaseProxy::onUpdateFamilyMember(const QString id, const QString firstName, const QString lastName, const QByteArray image)
+{
+    if (db.isOpen())
+    {
+        QSqlQuery query(db);
+        query.prepare("UPDATE " TABLE " SET firstName=:firstName, lastName=:lastName, iconBlob=:image WHERE id=:id");
+        query.bindValue(":firstName", firstName);
+        query.bindValue(":lastName", firstName);
+        query.bindValue(":image", image);
+        query.bindValue(":id", id);
+        if (!query.exec()) qDebug() << query.lastError().text();
+        familyModel->setQuery("SELECT * FROM " TABLE);
+    }
+}
+
 
 bool DatabaseProxy::openDataBase()
 {
@@ -45,7 +62,7 @@ bool DatabaseProxy::createTable()
                             "id INTEGER PRIMARY KEY AUTOINCREMENT, "
                             "firstName"     " VARCHAR(255)   NOT NULL,"
                             "lastName"      " VARCHAR(255)   NOT NULL,"
-                            "iconBlob"      " BLOB           NOT NULL"
+                            "iconBlob"      " BLOB           "
                         " )"
                     )){
         qDebug() << "Database table create error " << TABLE;

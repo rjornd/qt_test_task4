@@ -3,6 +3,7 @@
 #include <QQmlContext>
 #include "applicationmediator.h"
 #include "databaseproxy.h"
+#include "filereader.h"
 #include "imagefromblobdisplayer.h"
 int main(int argc, char *argv[])
 {
@@ -16,8 +17,10 @@ int main(int argc, char *argv[])
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QQmlContext* pContext = engine.rootContext();
     DatabaseProxy* dbproxy = new DatabaseProxy(QCoreApplication::instance(), pContext);
-    ApplicationMediator* applicationMediator = new ApplicationMediator(QCoreApplication::instance(), dbproxy);
-    pContext->setContextProperty("ApplicationMediator", applicationMediator);
+    //ApplicationMediator* applicationMediator = new ApplicationMediator(QCoreApplication::instance(), dbproxy);
+    FileReader * fileReader = new FileReader(QCoreApplication::instance());
+    pContext->setContextProperty("FileReader", fileReader);
+    pContext->setContextProperty("DatabaseProxy", dbproxy);
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {

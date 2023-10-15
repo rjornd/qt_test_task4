@@ -31,8 +31,15 @@ QVariant SqlQueryModelGenerator::data(const QModelIndex &index, int role) const
         int columnIdx = role - Qt::UserRole - 1;
         QModelIndex modelIndex = this->index(index.row(), columnIdx);
         value = QSqlQueryModel::data(modelIndex, Qt::DisplayRole);
-        if(roleNames().value(role) == "iconBlob")
-            return QImage::fromData(value.toByteArray());
+        if(roleNames().value(role) == "iconBlob") {
+            QImage img;
+            if (img.loadFromData(value.toByteArray())) return img;
+            else {
+                img.load(":/icons/missingImage");
+
+                return img;
+            }
+        }
     }
     return value;
 }

@@ -5,7 +5,7 @@ import "qrc:/Entities"
 import 'qrc:/DefaultElements'
 
 ApplicationWindow {
-
+    id: mainApplicationWindow
     width: 800
     height: 600
     minimumWidth: 800
@@ -60,7 +60,6 @@ ApplicationWindow {
         }
     }
 
-
     SettingPopup {
         id: settingsPopup
     }
@@ -68,3 +67,7 @@ ApplicationWindow {
         id: navigationPopup
     }
 }
+
+
+
+

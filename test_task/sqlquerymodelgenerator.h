@@ -5,6 +5,7 @@
 #include <QSqlRecord>
 #include <QSqlField>
 #include <QImage>
+#include <QUrl>
 class SqlQueryModelGenerator : public QSqlQueryModel
 {
     Q_OBJECT

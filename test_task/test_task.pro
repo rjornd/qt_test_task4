@@ -7,6 +7,7 @@ QT += sql
 SOURCES += \
         applicationmediator.cpp \
         databaseproxy.cpp \
+        filereader.cpp \
         imagefromblobdisplayer.cpp \
         main.cpp \
         sqlquerymodelgenerator.cpp
@@ -27,5 +28,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     applicationmediator.h \
     databaseproxy.h \
+    filereader.h \
     imagefromblobdisplayer.h \
     sqlquerymodelgenerator.h

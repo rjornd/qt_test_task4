@@ -16,5 +16,10 @@
         <file>Entities/Incomes.qml</file>
         <file>Entities/Outcomes.qml</file>
         <file>Delegates/FamilyModelDelegate.qml</file>
+        <file>DefaultElements/AbstractButton.qml</file>
+        <file alias="icons/missingImage">icons/missingImage.jpg</file>
+        <file>Entities/FamilyItemUpdatePopup.qml</file>
+        <file>DefaultElements/AbstractTextInput.qml</file>
+        <file>Entities/FileSystemDialog.qml</file>
     </qresource>
 </RCC>

@@ -19,6 +19,7 @@ class DatabaseProxy : public QObject
 private:
     QSqlDatabase db;
     QQmlContext* pContext;
+    SqlQueryModelGenerator* familyModel;
     bool openDataBase();
     bool restoreDataBase();
     void closeDataBase();
@@ -26,7 +27,9 @@ private:
     void connectToDataBase();
 public:
     explicit DatabaseProxy(QObject *parent = nullptr, QQmlContext* pContext = nullptr);
-
+public slots:
+    void onUpdateFamilyMember(const QString id, const QString firstName,
+                              const QString lastName, const QByteArray image);
 signals:
     void dbError(QString);
     void dbAnswer(QString);
