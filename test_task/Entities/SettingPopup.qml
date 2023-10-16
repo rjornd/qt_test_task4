@@ -37,9 +37,9 @@ Popup {
             }
 
             Slider {
-                from: 0.8
-                to: 1.5
-                value: 1
+                from: 0.7
+                to: 1.4
+                value: 0.9
                 Layout.alignment: Qt.AlignCenter
                 live: false
                 onValueChanged: {

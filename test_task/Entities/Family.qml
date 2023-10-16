@@ -5,10 +5,13 @@ import "qrc:/DefaultElements"
 import "qrc:/Delegates"
 Item {
     anchors.fill: parent
+    FamilyAddMemberPopup {
+        id: addPopup
+    }
         ColumnLayout {
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
-            width: parent.width/1.5
+            width: parent.width/1.3
             anchors.bottom: parent.bottom
             anchors.margins: 20
             spacing: 20
@@ -37,6 +40,9 @@ Item {
             AbstractButton {
                 Layout.alignment: Qt.AlignCenter
                 text: "Добавить"
+                onClicked: {
+                    addPopup.open()
+                }
             }
         }
 }

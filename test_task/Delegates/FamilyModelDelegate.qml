@@ -31,6 +31,7 @@ Item {
             right: parent.right
         }
         Column {
+            Layout.maximumWidth: parent.parent.width/2
 
             AbstractText { text: '<b>Имя:</b> ' + firstName }
             AbstractText { text: '<b>Фамилия:</b> ' + lastName }

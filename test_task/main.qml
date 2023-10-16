@@ -18,8 +18,8 @@ ApplicationWindow {
     property real uiScaleFactor: 1.0
 
     onUiScaleFactorChanged: {
-        if (uiScaleFactor >= 1.5) uiScaleFactor = 1.5
-        if (uiScaleFactor <= 0.8) uiScaleFactor = 0.8
+        if (uiScaleFactor >= 1.4) uiScaleFactor = 1.4
+        if (uiScaleFactor <= 0.7) uiScaleFactor = 0.7
     }
 
     color: colorPalette.backgroundColor
@@ -49,10 +49,6 @@ ApplicationWindow {
             State {
                 name: "INCOMES"
                 PropertyChanges { target: appRouter; source: "qrc:/Entities/Incomes.qml";}
-            },
-            State {
-                name: "OUTCOMES"
-                PropertyChanges { target: appRouter; source: "qrc:/Entities/Outcomes.qml";}
             }
         ]
         Component.onCompleted: {

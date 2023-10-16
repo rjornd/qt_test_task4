@@ -4,4 +4,6 @@ import QtQuick.Layouts 1.15
 import ImageConnector 1.0
 import QtQuick.Dialogs 1.3 //sudo apt install qml-module-qtquick-dialogs
 
+Item {
 
+}

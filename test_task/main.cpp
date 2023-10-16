@@ -21,14 +21,13 @@ int main(int argc, char *argv[])
     FileReader * fileReader = new FileReader(QCoreApplication::instance());
     pContext->setContextProperty("FileReader", fileReader);
     pContext->setContextProperty("DatabaseProxy", dbproxy);
-
+    app.setOrganizationName("Company");
+    app.setApplicationName("TestTask Application");
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
-
-
 
     engine.load(url);
 

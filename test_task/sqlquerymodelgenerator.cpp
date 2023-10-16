@@ -10,7 +10,18 @@ void SqlQueryModelGenerator::setQuery(const QString &query, const QSqlDatabase &
 {
     QSqlQueryModel::setQuery(query, db);
     generateRoleNames();
+    savedQuery = query;
 }
+
+QVariant SqlQueryModelGenerator::getItemByIndexName(int index, QByteArray roleName)
+{
+    int role = m_roleNames.key(roleName);
+    int columnIdx = role - Qt::UserRole - 1;
+    QModelIndex modelIndex = this->index(index, columnIdx);
+    QVariant value = QSqlQueryModel::data(modelIndex, Qt::DisplayRole);
+    return value;
+}
+
 
 void SqlQueryModelGenerator::generateRoleNames()
 {
@@ -36,10 +47,15 @@ QVariant SqlQueryModelGenerator::data(const QModelIndex &index, int role) const
             if (img.loadFromData(value.toByteArray())) return img;
             else {
                 img.load(":/icons/missingImage");
-
                 return img;
             }
         }
     }
     return value;
+}
+
+void SqlQueryModelGenerator::updateModel()
+{
+    QSqlQueryModel::setQuery(savedQuery);
+    generateRoleNames();
 }

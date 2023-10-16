@@ -57,33 +57,15 @@ Popup {
                 Layout.preferredWidth: navbarLayout.width
                 AbstractText{
                     id: txtIncomes
-                    text: "Доходы"
+                    text: "Транзакции"
                     anchors.verticalCenter: parent.verticalCenter
                     color: colorPalette.linkColor
                 }
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        console.log("Доходы")
+                        console.log("Транзакции")
                         appRouter.state = "INCOMES"
-                        navBar.close()
-                    }
-                }
-            }
-            Item {
-                Layout.preferredHeight: txtFamily.height + 10
-                Layout.preferredWidth: navbarLayout.width
-                AbstractText{
-                    id: txtOutcomes
-                    text: "Расходы"
-                    anchors.verticalCenter: parent.verticalCenter
-                    color: colorPalette.linkColor
-                }
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        console.log("Расходы")
-                        appRouter.state = "OUTCOMES"
                         navBar.close()
                     }
                 }

@@ -20,6 +20,10 @@
         <file alias="icons/missingImage">icons/missingImage.jpg</file>
         <file>Entities/FamilyItemUpdatePopup.qml</file>
         <file>DefaultElements/AbstractTextInput.qml</file>
-        <file>Entities/FileSystemDialog.qml</file>
+        <file>Entities/FamilyAddMemberPopup.qml</file>
+        <file>Entities/TransactionAddPopup.qml</file>
+        <file>DefaultElements/AbstractTextArea.qml</file>
+        <file>DefaultElements/AbstractComboBox.qml</file>
+        <file>Delegates/TransactionsModelDelegate.qml</file>
     </qresource>
 </RCC>

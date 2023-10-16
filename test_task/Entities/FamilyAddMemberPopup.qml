@@ -7,12 +7,11 @@ import "qrc:/DefaultElements"
 
 
 Item {
-
     function open(){
-        familyItmUpdatePopup.open()
+        familyAddMemberPopup.open()
     }
     function close(){
-        familyItmUpdatePopup.close()
+        familyAddMemberPopup.close()
     }
     property variant savedImageByteArray;
 
@@ -32,7 +31,7 @@ FileDialog {
 
 
 Popup {
-    id: familyItmUpdatePopup
+    id: familyAddMemberPopup
     modal: true
     focus: true
     property var overlay: Overlay.overlay
@@ -72,7 +71,7 @@ Popup {
                         clip: true
                         AbstractTextInput {
                             id: textInput1
-                            text: firstName
+                            text: "Введите имя"
                             width: parent.width
                             verticalAlignment: TextInput.AlignVCenter
                         }
@@ -90,36 +89,27 @@ Popup {
                         clip: true
                         AbstractTextInput {
                             id: textInput2
-                            text: lastName
+                            text: "Введите фамилию"
                             width: parent.width
                         }
                     }
                 }
-                Row {
-                    AbstractButton {
-                        text: "Подтвердить"
-                        onClicked: {
-                            DatabaseProxy.onUpdateFamilyMember(id, textInput1.text , textInput2.text, savedImageByteArray)
-                        }
-                    }
-                    spacing: 20
-                    AbstractButton {
-                        text: "Удалить"
-                        onClicked: {
-                            DatabaseProxy.onDeleteFamilyMember(id)
-                        }
+                AbstractButton {
+                    text: "Подтвердить"
+                    onClicked: {
+                        DatabaseProxy.onAddFamilyMember(textInput1.text , textInput2.text, savedImageByteArray)
+                        familyAddMemberPopup.close();
                     }
                 }
             }
             Item {
                 width: 150
                 height: 150
-
                 ImageFromBlobDisplayer {
                     id: imgFromFile
                     widthRescale: 150
                     heightRescale: 150
-                    image: iconBlob
+                    image: FileReader.readAsImage("qrc:/icons/missingImage")
                 }
                 MouseArea {
                     anchors.fill: parent

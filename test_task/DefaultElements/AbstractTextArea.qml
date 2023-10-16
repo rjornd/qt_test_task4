@@ -1,6 +1,7 @@
-import QtQuick 2.15
+import QtQuick.Controls 2.15
 
-TextInput {
+TextArea {
     color: colorPalette.textColor
     font.pixelSize: 20 * uiScaleFactor
+    wrapMode: Text.Wrap
 }
