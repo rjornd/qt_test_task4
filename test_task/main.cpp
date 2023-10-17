@@ -1,7 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include "applicationmediator.h"
 #include "databaseproxy.h"
 #include "filereader.h"
 #include "imagefromblobdisplayer.h"
