@@ -7,10 +7,10 @@
 #include "sqlquerymodelgenerator.h"
 
 #define DATABASE_HOSTNAME   "DataBaseHostname"
-#define DATABASE_NAME       "database8.db"
+#define DATABASE_NAME       "database.db"
 
-#define FAMILY_TABLE        "FamilyExample"
-#define INCOMES_TABLE       "IncomesTable"
+#define FAMILY_TABLE        "FamilyTable"
+#define INCOMES_TABLE       "TransactionsTable"
 
 class DatabaseProxy : public QObject
 {
@@ -36,9 +36,7 @@ public slots:
                             const QString &lastName, const QByteArray &image);
     void onAddTransactionItem( const int &familyId, const QString &type, const QString &category,
                                const float &amount, const QString &desctiption);
-signals:
-    void dbError(QString);
-    void dbAnswer(QString);
+
 };
 
 #endif // DATABASEPROXY_H

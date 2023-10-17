@@ -20,10 +20,9 @@ Item {
         }
 
         ScrollView {
-            ScrollBar.horizontal.interactive: true
+            ScrollBar.horizontal.interactive: false
             ScrollBar.vertical.interactive: true
             ScrollBar.vertical.policy: ScrollBar.AlwaysOn
-            ScrollBar.horizontal.policy: ScrollBar.AlwaysOn
             clip: true
             Layout.preferredHeight: parent.height/1.5
             Layout.fillWidth: true

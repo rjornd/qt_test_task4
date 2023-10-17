@@ -8,12 +8,15 @@ Rectangle {
     width: ListView.view.width
     height: rowLayout.height
     border.width: 2
+
     MouseArea{
         anchors.fill: delegate
-//        onClicked: {
-//            console.log('<b>Имя:</b> ' + firstName)
-//            updatePopup.open()
-//        }
+        onClicked: {
+            extInfoPopup.open()
+        }
+        TransactionExtendedInfoPopup {
+            id: extInfoPopup
+        }
     }
     RowLayout {
         id: rowLayout
@@ -26,7 +29,6 @@ Rectangle {
             Layout.preferredWidth: parent.width/2
             clip: true
             AbstractText {
-
                 onFontChanged: delegate.height = font.pixelSize*3
                 id: textitem
                 text: "<b>Имя:</b> " + firstName
@@ -46,4 +48,6 @@ Rectangle {
                 text: "<b>Сумма:</b> " + operationAmount
             }
     }
+
 }
+

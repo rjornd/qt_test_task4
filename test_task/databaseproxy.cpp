@@ -89,7 +89,7 @@ void DatabaseProxy::onAddTransactionItem(const int &familyId, const QString &typ
         qint64 unixTime = currentDateTime.toSecsSinceEpoch();
         query.bindValue(":datetime", unixTime);
         if (!query.exec()) qDebug() << query.lastError().text();
-        familyModel->updateModel();
+        transactionsModel->updateModel();
     }
 }
 

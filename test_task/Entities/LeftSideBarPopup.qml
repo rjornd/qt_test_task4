@@ -65,7 +65,7 @@ Popup {
                     anchors.fill: parent
                     onClicked: {
                         console.log("Транзакции")
-                        appRouter.state = "INCOMES"
+                        appRouter.state = "TRANSACTIONS"
                         navBar.close()
                     }
                 }

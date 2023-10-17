@@ -16,8 +16,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<ImageFromBlobDisplayer>("ImageConnector",1,0,"ImageFromBlobDisplayer");
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QQmlContext* pContext = engine.rootContext();
-    DatabaseProxy* dbproxy = new DatabaseProxy(QCoreApplication::instance(), pContext);
-    //ApplicationMediator* applicationMediator = new ApplicationMediator(QCoreApplication::instance(), dbproxy);
+    DatabaseProxy* dbproxy = new DatabaseProxy(nullptr, pContext);
     FileReader * fileReader = new FileReader(QCoreApplication::instance());
     pContext->setContextProperty("FileReader", fileReader);
     pContext->setContextProperty("DatabaseProxy", dbproxy);

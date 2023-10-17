@@ -98,6 +98,9 @@ Popup {
                     text: "Подтвердить"
                     onClicked: {
                         DatabaseProxy.onAddFamilyMember(textInput1.text , textInput2.text, savedImageByteArray)
+                        textInput1.text = ""
+                        textInput2.text = ""
+                        savedImageByteArray = ""
                         familyAddMemberPopup.close();
                     }
                 }

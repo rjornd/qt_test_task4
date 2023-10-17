@@ -6,9 +6,9 @@ import 'qrc:/DefaultElements'
 
 ApplicationWindow {
     id: mainApplicationWindow
-    width: 800
+    width: 900
     height: 600
-    minimumWidth: 800
+    minimumWidth: 900
     minimumHeight: 600
 
     visible: true
@@ -47,8 +47,8 @@ ApplicationWindow {
                 PropertyChanges { target: appRouter; source: "qrc:/Entities/Family.qml";}
             },
             State {
-                name: "INCOMES"
-                PropertyChanges { target: appRouter; source: "qrc:/Entities/Incomes.qml";}
+                name: "TRANSACTIONS"
+                PropertyChanges { target: appRouter; source: "qrc:/Entities/Transactions.qml";}
             }
         ]
         Component.onCompleted: {

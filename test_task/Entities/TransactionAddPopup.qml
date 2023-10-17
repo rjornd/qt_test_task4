@@ -142,6 +142,12 @@ Popup {
                 onClicked: {
                     DatabaseProxy.onAddTransactionItem(userComboBox.selectedUserId, typeComboBox.currentText,
                                                        categoryText.text, amountText.text, desctiptionText.text)
+                    transactionAddMemberPopup.close()
+
+
+                    categoryText.text=""
+                    amountText.text=""
+                    desctiptionText.text=""
                 }
             }
 

@@ -13,8 +13,7 @@
         <file>Entities/LeftSideBarPopup.qml</file>
         <file>Entities/Home.qml</file>
         <file>Entities/Family.qml</file>
-        <file>Entities/Incomes.qml</file>
-        <file>Entities/Outcomes.qml</file>
+        <file>Entities/Transactions.qml</file>
         <file>Delegates/FamilyModelDelegate.qml</file>
         <file>DefaultElements/AbstractButton.qml</file>
         <file alias="icons/missingImage">icons/missingImage.jpg</file>
@@ -25,5 +24,6 @@
         <file>DefaultElements/AbstractTextArea.qml</file>
         <file>DefaultElements/AbstractComboBox.qml</file>
         <file>Delegates/TransactionsModelDelegate.qml</file>
+        <file>Entities/TransactionExtendedInfoPopup.qml</file>
     </qresource>
 </RCC>
