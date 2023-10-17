@@ -123,8 +123,6 @@ bool DatabaseProxy::restoreDataBase()
 
 bool DatabaseProxy::createTable()
 {
-    /* In this case, a forming raw SQL-query with its subsequent execution.
-     * */
     QSqlQuery query(db);
     if(!query.exec( "CREATE TABLE " FAMILY_TABLE " ("
                             "id INTEGER PRIMARY KEY AUTOINCREMENT, "

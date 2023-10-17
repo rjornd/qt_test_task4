@@ -22,7 +22,6 @@ QVariant SqlQueryModelGenerator::getItemByIndexName(int index, QByteArray roleNa
     return value;
 }
 
-
 void SqlQueryModelGenerator::generateRoleNames()
 {
     m_roleNames.clear();

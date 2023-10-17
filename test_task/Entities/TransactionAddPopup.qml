@@ -12,7 +12,6 @@ Popup {
     width: columnLayout.width + 80
     height: columnLayout.height + 80
 
-
     background: Rectangle {
         radius: 10
         color: colorPalette.accentBackgroundColor
@@ -34,7 +33,6 @@ Popup {
                 rows: 2
                 columns: 2
                 id: addItmLayout
-
                 Column {
 
                     AbstractText {
@@ -112,7 +110,6 @@ Popup {
                     }
                 }
             }
-
             Column {
                 Layout.alignment: Qt.AlignCenter
                 width: parent.width
@@ -120,7 +117,6 @@ Popup {
                     text: "Описание: "
 
                 }
-
                 Rectangle {
                     width: overlay.width/2
                     height: overlay.height/4
@@ -143,15 +139,11 @@ Popup {
                     DatabaseProxy.onAddTransactionItem(userComboBox.selectedUserId, typeComboBox.currentText,
                                                        categoryText.text, amountText.text, desctiptionText.text)
                     transactionAddMemberPopup.close()
-
-
                     categoryText.text=""
                     amountText.text=""
                     desctiptionText.text=""
                 }
             }
-
         }
-
-       }
+    }
 }

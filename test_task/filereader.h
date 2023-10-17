@@ -12,8 +12,6 @@ public:
 
     Q_INVOKABLE QByteArray read(const QUrl &fileurl);
     Q_INVOKABLE QImage readAsImage(const QUrl &fileurl);
-signals:
-
 };
 
 #endif // FILEREADER_H

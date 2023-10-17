@@ -38,16 +38,15 @@ Rectangle {
                 text: "<b>Фамилия:</b> " + lastName
             }
         }
-            AbstractText {
-                Layout.preferredWidth: parent.width/4
-                text:"<b>Тип:</b> " +  type
-            }
+        AbstractText {
+            Layout.preferredWidth: parent.width/4
+            text:"<b>Тип:</b> " +  type
+        }
 
-            AbstractText {
-                Layout.preferredWidth: parent.width/4
-                text: "<b>Сумма:</b> " + operationAmount
-            }
+        AbstractText {
+            Layout.preferredWidth: parent.width/4
+            text: "<b>Сумма:</b> " + operationAmount
+        }
     }
-
 }
 
